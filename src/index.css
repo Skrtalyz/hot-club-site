@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@theme {
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --color-hot-black: #0a0a0a;
+  --color-hot-white: #f5f5f5;
+  --color-hot-red: #e02020;
+}
+
+@layer base {
+  body {
+    @apply bg-hot-black text-hot-white font-sans selection:bg-hot-red selection:text-white;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bebas tracking-wider font-bold;
+  }
+}
+
+.card-shadow {
+  box-shadow: 0 4px 40px rgba(224, 32, 32, 0.08);
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_50px_rgba(224,32,32,0.12)];
+}
+
+.browser-mockup {
+  @apply border border-white/10 rounded-xl overflow-hidden bg-[#0d0d0d] shadow-2xl;
+}
+
+.browser-header {
+  @apply h-8 bg-white/5 border-b border-white/10 flex items-center px-4 gap-1.5;
+}
+
+.browser-dot {
+  @apply w-2.5 h-2.5 rounded-full bg-white/10;
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(224, 32, 32, 0.2);
+}
+
+.glow-red-strong {
+  box-shadow: 0 0 40px rgba(224, 32, 32, 0.4);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(245, 245, 245, 0.05);
+  color: transparent;
+}
+
+@keyframes border-flow {
+  0% { border-left-color: transparent; }
+  50% { border-left-color: #e02020; }
+  100% { border-left-color: transparent; }
+}
+
+.benefit-card:hover {
+  border-left: 4px solid #e02020;
+  transition: all 0.3s ease;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
